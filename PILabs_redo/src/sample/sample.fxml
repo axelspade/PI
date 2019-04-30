@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <MenuBar fx:id="menuBarId" BorderPane.alignment="CENTER">
+              <menus>
+                <Menu fx:id="menuFileId" mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem fx:id="menuItemLoad" mnemonicParsing="false" onAction="#menuItemLoad" text="Load" />
+                        <MenuItem fx:id="menuItemSave" mnemonicParsing="false" onAction="#menuItemSave" text="Save" />
+                    <MenuItem fx:id="menuItemClose" mnemonicParsing="false" onAction="#menuItemClose" text="Close" />
+                  </items>
+                </Menu>
+                <Menu fx:id="menuEditId" mnemonicParsing="false" text="Edit">
+                  <items>
+                        <Menu fx:id="menuPunctualFilterId" mnemonicParsing="false" text="Punctual Filters">
+                          <items>
+                            <MenuItem fx:id="menuAddContrastId" mnemonicParsing="false" onAction="#menuItemAddContrast" text="Add contrast" />
+                          </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Spacial Filters">
+                          <items>
+                            <MenuItem fx:id="menuMedianFilterId" mnemonicParsing="false" onAction="#menuItemMedianFilter" text="Median Filter" />
+                              <MenuItem fx:id="menuBiomedicalFilterId" mnemonicParsing="false" onAction="#menuItemBiomedicalFilter" text="Biomedical Improvement" />
+                          </items>
+                        </Menu>
+                  </items>
+                </Menu>
+                <Menu fx:id="menuHelpId" mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <left>
+            <ImageView fx:id="imageViewLeftId" fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets left="10.0" />
+               </BorderPane.margin>
+            </ImageView>
+         </left>
+         <right>
+            <ImageView fx:id="imageViewRightId" fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets right="10.0" />
+               </BorderPane.margin>
+            </ImageView>
+         </right>
+         <bottom>
+            <Pane prefHeight="33.0" prefWidth="630.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="14.0" layoutY="6.0" text="Biomedical Improvement" />
+                  <RadioButton fx:id="radioButtonLaplacianId" layoutX="197.0" layoutY="5.0" mnemonicParsing="false" text="Laplacian" />
+                  <RadioButton fx:id="radioButtonPrewittId" layoutX="293.0" layoutY="5.0" mnemonicParsing="false" text="Prewitt" />
+                  <RadioButton fx:id="radioButtonSobelId" layoutX="375.0" layoutY="5.0" mnemonicParsing="false" text="Sobel" />
+                  <RadioButton fx:id="radioButtonKirschId" layoutX="445.0" layoutY="5.0" mnemonicParsing="false" text="Kirsch" />
+               </children>
+            </Pane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
